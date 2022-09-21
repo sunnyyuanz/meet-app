@@ -11,16 +11,20 @@ class Event extends Component {
 
   render() {
     return (
-      <div>
-        <h1 className="title"></h1>
+      <div className="event_Overview">
+        <h1 className="event__Title">{this.props.event.summary}</h1>
         {this.state.showDetail && (
           <p className="detail">
-            <div>Date: </div>
-            <div>description: </div>
+            <div className="event__Date">
+              Date:{this.props.event.start.dateTime}
+            </div>
+            <div className="description">
+              Description: {this.props.event.description}
+            </div>
           </p>
         )}
 
-        <button className="detailButton" onClick={this.handleEventDetail}>
+        <button className="detail-btn" onClick={this.handleEventDetail}>
           Show Detail
         </button>
       </div>

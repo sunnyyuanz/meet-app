@@ -9,10 +9,10 @@ describe('<Event /> component', () => {
     EventWrapper = shallow(<Event />);
   });
   test('renders event title', () => {
-    expect(EventWrapper.find('.title')).toHaveLength(1);
+    expect(EventWrapper.find('.event__Title')).toHaveLength(1);
   });
   test('renders a Detail button', () => {
-    expect(EventWrapper.find('.detailButton')).toHaveLength(1);
+    expect(EventWrapper.find('.detail-btn')).toHaveLength(1);
   });
   test('event detail is hided by default', () => {
     expect(EventWrapper.state('showDetail')).toBe(false);
@@ -21,7 +21,7 @@ describe('<Event /> component', () => {
     EventWrapper.setState({
       showDetail: false,
     });
-    EventWrapper.find('.detailButton').simulate('click');
+    EventWrapper.find('.detail-btn').simulate('click');
     expect(EventWrapper.state('showDetail')).toBe(true);
   });
 });

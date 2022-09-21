@@ -12,12 +12,12 @@ class NumberofEvents extends Component {
 
   render() {
     return (
-      <div className="SpecifyNumber">
+      <div className="numberOfEvents">
         <input
           type="number"
           placeholder="Specify Number of Events"
-          className="numberInput"
           onChange={this.handleNumberChanged}
+          className="numberInput"
         />
       </div>
     );
