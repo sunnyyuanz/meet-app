@@ -3,10 +3,10 @@ import { shallow } from 'enzyme';
 import NumberOfEvents from '../NumberOfEvents';
 import { mockData } from '../mock-data';
 
-describe('<CitySearch /> component', () => {
+describe('<NumberOfEvents /> component', () => {
   let NumberOfEventsWrapper;
   beforeAll(() => {
-    NumberOfEventsWrapper = shallow(<NumberOfEvents />);
+    NumberOfEventsWrapper = shallow(<NumberOfEvents updateEvents={() => {}} />);
   });
   test('32 is the default number of events', () => {
     NumberOfEventsWrapper.setState({
@@ -23,6 +23,6 @@ describe('<CitySearch /> component', () => {
     });
     const eventObject = { target: { value: 15 } };
     NumberOfEventsWrapper.find('.numberInput').simulate('change', eventObject);
-    expect(NumberOfEventsWrapper.state('EventsNumber')).toBe(15);
+    expect(NumberOfEventsWrapper.state('EventsNumber')).toEqual(15);
   });
 });

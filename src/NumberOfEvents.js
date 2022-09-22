@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
-class NumberofEvents extends Component {
+class NumberOfEvents extends Component {
   state = {
     EventsNumber: 32,
   };
 
   handleNumberChanged = (input) => {
-    const value = input.target.value;
+    const value = parseInt(input.target.value);
     this.setState({ EventsNumber: value });
+    this.props.updateEvents(undefined, value);
   };
 
   render() {
@@ -18,10 +19,11 @@ class NumberofEvents extends Component {
           placeholder="Specify Number of Events"
           onChange={this.handleNumberChanged}
           className="numberInput"
+          value={this.state.EventsNumber}
         />
       </div>
     );
   }
 }
 
-export default NumberofEvents;
+export default NumberOfEvents;
