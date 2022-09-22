@@ -87,17 +87,17 @@ describe('<App /> integration', () => {
     AppWrapper.unmount();
   });
 
-  // test('NumberOfEvents Passes back the specified number of EventsNumber', async () => {
-  //   const AppWrapper = mount(<App />);
-  //   const AppTotalEventsShowingState = AppWrapper.state('EventsNumber');
-  //   const NumberOfEventWrapper = AppWrapper.find(NumberOfEvents);
-  //   await NumberOfEventWrapper.find('.numberInput')
-  //     .at(0)
-  //     .simulate('change', { target: { value: 30 } });
-  //   expect(AppTotalEventsShowingState).not.toEqual(undefined);
-  //   expect(AppTotalEventsShowingState).toEqual(
-  //     NumberOfEventWrapper.state('EventsNumber')
-  //   );
-  //   AppWrapper.unmount();
-  // });
+  test('NumberOfEvents Passes back the specified number of EventsNumber', async () => {
+    const AppWrapper = mount(<App />);
+    const AppTotalEventsShowingState = AppWrapper.state('EventsNumber');
+    const NumberOfEventWrapper = AppWrapper.find(NumberOfEvents);
+    await NumberOfEventWrapper.find('.numberInput')
+      .at(0)
+      .simulate('change', { target: { value: 30 } });
+    expect(AppTotalEventsShowingState).not.toEqual(undefined);
+    expect(AppTotalEventsShowingState).toEqual(
+      NumberOfEventWrapper.state('EventsNumber')
+    );
+    AppWrapper.unmount();
+  });
 });

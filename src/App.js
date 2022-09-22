@@ -25,6 +25,7 @@ class App extends Component {
 
       this.setState({
         events: locationEvents.slice(0, newEventsNumber),
+        EventsNumber: newEventsNumber,
       });
     });
   };
@@ -39,7 +40,7 @@ class App extends Component {
     this.mounted = true;
     getEvents().then((events) => {
       this.setState({
-        events,
+        events: events.slice(0, this.state.EventsNumber),
         locations: extractLocations(events),
       });
     });
