@@ -10,15 +10,22 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
+    locationSelected: 'all',
     EventsNumber: 32,
   };
 
   updateEvents = (location, newEventsNumber) => {
-    this.setState({
-      EventsNumber: newEventsNumber,
-    });
+    if (newEventsNumber === undefined) {
+      newEventsNumber = this.state.EventsNumber;
+    } else {
+      this.setState({ EventsNumber: newEventsNumber });
+    }
+    if (location === undefined) {
+      location = this.state.locationSelected;
+    }
+    console.log('this.state.EventsNumber =' + this.state.EventsNumber);
     getEvents().then((events) => {
-      const locationEvents =
+      let locationEvents =
         location === 'all'
           ? events
           : events.filter((event) => event.location === location);
@@ -26,6 +33,7 @@ class App extends Component {
       this.setState({
         events: locationEvents.slice(0, newEventsNumber),
         EventsNumber: newEventsNumber,
+        locationSelected: location,
       });
     });
   };

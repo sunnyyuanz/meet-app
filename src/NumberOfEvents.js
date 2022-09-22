@@ -6,9 +6,12 @@ class NumberOfEvents extends Component {
   };
 
   handleNumberChanged = (input) => {
-    const value = parseInt(input.target.value);
-    this.setState({ EventsNumber: value });
-    this.props.updateEvents(undefined, value);
+    if (!input.target.value.isNaN) {
+      const userInputNum = parseInt(input.target.value);
+      this.setState({ EventsNumber: userInputNum });
+      this.props.updateEvents(undefined, userInputNum);
+      console.log(userInputNum);
+    }
   };
 
   render() {

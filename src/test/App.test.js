@@ -93,7 +93,7 @@ describe('<App /> integration', () => {
     const NumberOfEventWrapper = AppWrapper.find(NumberOfEvents);
     await NumberOfEventWrapper.find('.numberInput')
       .at(0)
-      .simulate('change', { target: { value: 30 } });
+      .simulate('change', { target: { value: 32 } });
     expect(AppTotalEventsShowingState).not.toEqual(undefined);
     expect(AppTotalEventsShowingState).toEqual(
       NumberOfEventWrapper.state('EventsNumber')
