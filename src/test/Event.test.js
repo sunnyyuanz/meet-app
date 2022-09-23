@@ -6,7 +6,7 @@ import Event from '../Event';
 describe('<Event /> component', () => {
   let EventWrapper;
   beforeAll(() => {
-    EventWrapper = shallow(<Event />);
+    EventWrapper = shallow(<Event event={mockData[1]} />);
   });
   test('renders event title', () => {
     expect(EventWrapper.find('.event__Title')).toHaveLength(1);
