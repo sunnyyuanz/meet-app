@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { mockData } from './mock-data';
 
 class Event extends Component {
   state = {
@@ -10,17 +11,15 @@ class Event extends Component {
   };
 
   render() {
+    const { event } = this.props;
+
     return (
       <div className="event_Overview">
-        <h1 className="event__Title">{this.props.event.summary}</h1>
+        <h1 className="event__Title">{event.summary}</h1>
         {this.state.showDetail && (
           <p className="detail">
-            <div className="event__Date">
-              Date:{this.props.event.start.dateTime}
-            </div>
-            <div className="description">
-              Description: {this.props.event.description}
-            </div>
+            <div className="event__Date">Date:{event.start.dateTime}</div>
+            <div className="description">Description: {event.description}</div>
           </p>
         )}
 
