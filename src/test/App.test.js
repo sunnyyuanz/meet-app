@@ -88,14 +88,18 @@ describe('<App /> integration', () => {
   });
 
   test('NumberOfEvents Passes back the specified number of EventsNumber', async () => {
+    // const mySpy = jest.fn();
     const AppWrapper = mount(<App />);
-    const AppTotalEventsShowingState = AppWrapper.state('EventsNumber');
     const NumberOfEventWrapper = AppWrapper.find(NumberOfEvents);
     await NumberOfEventWrapper.find('.numberInput')
       .at(0)
-      .simulate('change', { target: { value: 32 } });
-    expect(AppTotalEventsShowingState).not.toEqual(undefined);
-    expect(AppTotalEventsShowingState).toEqual(
+      .simulate('change', {
+        target: { value: 30 },
+      });
+    const AppEventsNumberState = AppWrapper.state('EventsNumber');
+    expect(NumberOfEventWrapper.find('.numberInput')).toHaveLength(1);
+    expect(AppEventsNumberState).not.toEqual(undefined);
+    expect(AppEventsNumberState).toEqual(
       NumberOfEventWrapper.state('EventsNumber')
     );
     AppWrapper.unmount();
