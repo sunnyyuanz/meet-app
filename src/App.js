@@ -53,6 +53,12 @@ class App extends Component {
         locations: extractLocations(events),
       });
     });
+
+    if (!navigator.onLine) {
+      this.setState({
+        warningText: 'Warning! Offline data might be outdated.',
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -62,7 +68,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {!navigator.onLine ? <WarningAlert /> : <></>}
+        {!this.state.warningText ? (
+          <WarningAlert text={this.state.warningtext} />
+        ) : (
+          <></>
+        )}
+
+        <WarningAlert text={this.state.warningtext} />
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}
