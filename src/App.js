@@ -5,6 +5,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents } from './api';
 import './nprogress.css';
+import { WarningAlert } from './Alert';
 
 class App extends Component {
   state = {
@@ -61,6 +62,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {!navigator.onLine ? <WarningAlert /> : <></>}
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}
