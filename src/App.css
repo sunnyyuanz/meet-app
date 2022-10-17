@@ -17,6 +17,10 @@ text[type="number"].recharts-text, text[type="category"].recharts-text{
   fill:#4BA4F2;
 }
 
+.summary{
+  margin-bottom: -55px;
+}
+
 line{
   stroke:#1e2a40;
 }
@@ -170,7 +174,7 @@ input[type="number"] {
 }
 
 .numberOfEvents {
-  width: 200px;
+  width: 0px;
   margin-top: 40px ;
   text-align: center;
 }
@@ -264,5 +268,11 @@ input[type="number"] {
     max-width: 50%;
     min-width: auto;
     margin: 0 auto;
+  }
+  .numberOfEvents {
+    width: 200px;
+  }
+  .summary{
+    margin-bottom: 0px;
   }
 }
