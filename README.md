@@ -11,7 +11,6 @@ upcoming events.
   - [Screenshot](#screenshot)
   - [Links](#links)
   - [Built with](#built-with)
-  - [Continued development](#continued-development)
 - [Author](#author)
 
 ## Overview
@@ -97,17 +96,17 @@ Then a chart showing the number of upcoming events in each city.
 
 ### Screenshot
 
-![Mobile Screenshot]()
-![Desktop Screenshot]()
+![Mobile Screenshot](/screenshot/Mobile_screenshot.PNG)
+![Desktop Screenshot](/screenshot/Desktop_screenshot.PNG)
 
 ### Links
 
-- Solution URL: []
-- Live Site URL: []
+- Solution URL: [https://github.com/sunnyyuanz/meet-app]
+- Live Site URL: [https://sunnyyuanz.github.io/meet-app/]
 
 ### Built with
 
-### Continued development
+React, TDD/BDD, Jest, Enzyme, Cucumber, Atatus, Recharts, AWS Lambda, OOP
 
 ## Author
 
