@@ -44,6 +44,7 @@ class CitySearch extends Component {
           onFocus={() => {
             this.setState({ showSuggestions: true });
           }}
+          placeholder="Choose your nearest city"
         />
         <InfoAlert text={this.state.infoText} />
         <ul

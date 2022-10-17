@@ -1,4 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
+html{
+  background-color:#304366 ;
+}
+
+.recharts-sector{
+  stroke:#304366;
+}
+
+.appTitle, .summary{
+  color:#FD768C;
+}
+.recharts-symbols{
+fill:#FD768C;
+}
+text[type="number"].recharts-text, text[type="category"].recharts-text{
+  fill:#4BA4F2;
+}
+
+line{
+  stroke:#1e2a40;
+}
+.recharts-cartesian-axis-line{
+  stroke: #4BA4F2;
+}
+
+.eventsByCity{
+  color:#4BA4F2
+}
+
 .App {
   text-align: center;
   padding: 2% 5%;
@@ -27,13 +56,14 @@ p {
 input[type="text"],
 input[type="number"] {
   padding: 8px 6px 8px 10px;
-  border-radius: 4px;
+  border-radius: 10px;
   outline: none;
   border: 1px solid #ccc;
   font-size: 14px;
   line-height: 20px;
   align-self: center;
   height: 38px;
+  color:#1e2a40;
 }
 
 .city {
@@ -78,23 +108,48 @@ input[type="number"] {
 
 .event {
   padding: 10px 10px 35px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-align: left;
-  border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
+  border-bottom: 1px solid #1e2a40;
+  background-color: rgba(30, 42, 64, 0.2);
 }
 
-.details-btn {
+.event:hover{
+  box-shadow: 2px 11px 26px #FD768C;
+}
+
+
+.event__Title{
+  color: #4BA4F2
+}
+
+.detail-btn {
   position: absolute;
   right: 5px;
   bottom: 5px;
   padding: 5px 8px;
   border-radius: 4px;
   outline: none;
+  border: none;
+  background: none;
+  color: #4BA4F2;
   cursor: pointer;
+  text-decoration: underline;
+}
+.detail{
+  color:#9c4957;
 }
 
+.detail div{
+  margin-bottom: 1em;
+}
+
+.numberOfEvents .Alert{
+  position: relative;
+  top:0px ;
+}
 .name {
   font-size: 18px;
   font-weight: 600;
