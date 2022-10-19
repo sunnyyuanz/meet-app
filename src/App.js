@@ -24,7 +24,7 @@ class App extends Component {
     locations: [],
     locationSelected: 'all',
     EventsNumber: 32,
-    showWelcomeScreen: undefined,
+    showWelcomeScreen: true,
   };
 
   updateEvents = (location, newEventsNumber) => {
@@ -93,15 +93,20 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.showWelcomeScreen === undefined)
-      return <div className="App" />;
+    if (this.state.showWelcomeScreen)
+      return (
+        <WelcomeScreen
+          showWelcomeScreen={this.state.showWelcomeScreen}
+          getAccessToken={() => {
+            getAccessToken();
+          }}
+        />
+      );
     return (
       <div className="App">
         <h1 className="appTitle">Meet App</h1>
-        {!this.state.warningText ? (
+        {this.state.warningText && (
           <WarningAlert text={this.state.warningtext} />
-        ) : (
-          <></>
         )}
 
         <WarningAlert text={this.state.warningtext} />
@@ -135,12 +140,6 @@ class App extends Component {
           </ResponsiveContainer>
         </div>
         <EventList events={this.state.events} />
-        <WelcomeScreen
-          showWelcomeScreen={this.state.showWelcomeScreen}
-          getAccessToken={() => {
-            getAccessToken();
-          }}
-        />
       </div>
     );
   }
