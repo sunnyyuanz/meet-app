@@ -1,35 +1,37 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
-html{
-  background-color:#304366 ;
+html {
+  background-color: #304366;
 }
 
-.recharts-sector{
-  stroke:#304366;
+.recharts-sector {
+  stroke: #304366;
 }
 
-.appTitle, .summary{
-  color:#FD768C;
+.appTitle,
+.summary {
+  color: #fd768c;
 }
-.recharts-symbols{
-fill:#FD768C;
+.recharts-symbols {
+  fill: #fd768c;
 }
-text[type="number"].recharts-text, text[type="category"].recharts-text{
-  fill:#4BA4F2;
+text[type='number'].recharts-text,
+text[type='category'].recharts-text {
+  fill: #4ba4f2;
 }
 
-.summary{
+.summary {
   margin-bottom: -55px;
 }
 
-line{
-  stroke:#1e2a40;
+line {
+  stroke: #1e2a40;
 }
-.recharts-cartesian-axis-line{
-  stroke: #4BA4F2;
+.recharts-cartesian-axis-line {
+  stroke: #4ba4f2;
 }
 
-.eventsByCity{
-  color:#4BA4F2
+.eventsByCity {
+  color: #4ba4f2;
 }
 
 .App {
@@ -57,8 +59,8 @@ p {
   display: block;
 }
 
-input[type="text"],
-input[type="number"] {
+input[type='text'],
+input[type='number'] {
   padding: 8px 6px 8px 10px;
   border-radius: 10px;
   outline: none;
@@ -67,7 +69,7 @@ input[type="number"] {
   line-height: 20px;
   align-self: center;
   height: 38px;
-  color:#1e2a40;
+  color: #1e2a40;
 }
 
 .city {
@@ -120,13 +122,12 @@ input[type="number"] {
   background-color: rgba(30, 42, 64, 0.2);
 }
 
-.event:hover{
-  box-shadow: 2px 11px 26px #FD768C;
+.event:hover {
+  box-shadow: 2px 11px 26px #fd768c;
 }
 
-
-.event__Title{
-  color: #4BA4F2
+.event__Title {
+  color: #4ba4f2;
 }
 
 .detail-btn {
@@ -138,21 +139,21 @@ input[type="number"] {
   outline: none;
   border: none;
   background: none;
-  color: #4BA4F2;
+  color: #4ba4f2;
   cursor: pointer;
   text-decoration: underline;
 }
-.detail{
-  color:#9c4957;
+.detail {
+  color: #4ba4f2;
 }
 
-.detail div{
+.detail div {
   margin-bottom: 1em;
 }
 
-.numberOfEvents .Alert{
+.numberOfEvents .Alert {
   position: relative;
-  top:0px ;
+  top: 0px;
 }
 .name {
   font-size: 18px;
@@ -175,7 +176,7 @@ input[type="number"] {
 
 .numberOfEvents {
   width: 0px;
-  margin-top: 40px ;
+  margin-top: 40px;
   text-align: center;
 }
 
@@ -254,10 +255,8 @@ input[type="number"] {
   color: #fff;
   font-size: 14px;
   letter-spacing: 0.2px;
-  font-family: "Roboto";
+  font-family: 'Roboto';
 }
-
-
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
@@ -272,7 +271,7 @@ input[type="number"] {
   .numberOfEvents {
     width: 200px;
   }
-  .summary{
+  .summary {
     margin-bottom: 0px;
   }
 }
