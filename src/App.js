@@ -24,7 +24,7 @@ class App extends Component {
     locations: [],
     locationSelected: 'all',
     EventsNumber: 32,
-    showWelcomeScreen: undefined,
+    showWelcomeScreen: true,
   };
 
   updateEvents = (location, newEventsNumber) => {
@@ -57,8 +57,15 @@ class App extends Component {
     const isTokenValid = (await checkToken(accessToken)).error ? false : true;
     const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get('code');
-    this.setState({ showWelcomeScreen: !(code || isTokenValid) });
-    if ((code || isTokenValid) && this.mounted) {
+    if (window.location.href.startsWith('http://localhost')) {
+      this.setState({ showWelcomeScreen: false });
+    } else {
+      this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+    }
+    if (
+      ((code || isTokenValid) && this.mounted) ||
+      window.location.href.startsWith('http://localhost')
+    ) {
       getEvents().then((events) => {
         if (this.mounted) {
           this.setState({
@@ -93,8 +100,15 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.showWelcomeScreen === undefined)
-      return <div className="App" />;
+    if (this.state.showWelcomeScreen === true)
+      return (
+        <WelcomeScreen
+          showWelcomeScreen={this.state.showWelcomeScreen}
+          getAccessToken={() => {
+            getAccessToken();
+          }}
+        />
+      );
     return (
       <div className="App">
         <h1 className="appTitle">Meet App</h1>
@@ -133,12 +147,6 @@ class App extends Component {
           </ResponsiveContainer>
         </div>
         <EventList events={this.state.events} />
-        <WelcomeScreen
-          showWelcomeScreen={this.state.showWelcomeScreen}
-          getAccessToken={() => {
-            getAccessToken();
-          }}
-        />
       </div>
     );
   }
